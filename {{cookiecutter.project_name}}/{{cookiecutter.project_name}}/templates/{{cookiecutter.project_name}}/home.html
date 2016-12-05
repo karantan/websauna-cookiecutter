@@ -1,24 +1,27 @@
 {# Template for home view #}
-
+{% raw %}
 {% extends "site/base.html" %}
 
 {% block content %}
-
+{% endraw %}
     <div class="jumbotron text-center">
-        <h1>{[ site_name ]}</h1>
+        <h1>{{ '{{' }} site_name {{ '}}' }}</h1>
         <p class="lead text-center">
-            {[ site_tag_line ]}
+            {{ '{{' }} site_tag_line {{ '}}' }}
         </p>
     </div>
-
-    {% if request.user %}
-        <p id="demo-text">
-            Welcome {[ request.user.friendly_name ]}!
-        </p>
-    {% else %}
-        <p id="demo-text">
-            Welcome visitor!
-        </p>
-    {% endif %}
+{% raw %}
+{% if request.user %}
+{% endraw %}
+    <p id="demo-text">
+        Welcome {{ '{{' }} request.user.friendly_name {{ '}}' }}!
+    </p>
+{% raw %}
+{% else %}
+    <p id="demo-text">
+        Welcome visitor!
+    </p>
+{% endif %}
 
 {% endblock %}
+{% endraw %}

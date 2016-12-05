@@ -4,7 +4,7 @@ import websauna.system
 
 
 class Initializer(websauna.system.Initializer):
-    """An initialization configuration used for starting {{project}}.
+    """An initialization configuration used for starting {{cookiecutter.project_name}}.
 
     Override parent class methods to customize application behavior.
     """
@@ -13,7 +13,7 @@ class Initializer(websauna.system.Initializer):
         """Configure static asset serving and cache busting."""
         super(Initializer, self).configure_static()
 
-        self.config.registry.static_asset_policy.add_static_view('{{cookiecutter.project_name}}-static', '{{cookiecutter.project_name}}:static')
+        self.config.registry.static_asset_policy.add_static_view('{{cookiecutter.project_slug}}-static', '{{cookiecutter.project_name}}:static')
 
     def configure_templates(self):
         """Include our package templates folder in Jinja 2 configuration."""

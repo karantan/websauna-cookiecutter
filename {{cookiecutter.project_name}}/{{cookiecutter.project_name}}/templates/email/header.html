@@ -15,8 +15,8 @@ To::
 <tr>
     <td align="right">
         <h2>
-          <a href="{{ 'home'|route_url }}">
-            <img class="logo" src="{[ '{{ cookiecutter.package_name }}:static/logo.png'|static_url ]}" alt="{[ site_name ]}">
+          <a href="{{ '{{' }}'home'|route_url {{ '}}' }}">
+            <img class="logo" src="{{ '{{' }} '{{ cookiecutter.project_name }}:static/logo.png'|static_url {{ '}}' }}" alt="{{ '{{' }} site_name {{ '}}' }}">
           </a>
         </h2>
     </td>

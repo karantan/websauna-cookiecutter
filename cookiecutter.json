@@ -1,5 +1,6 @@
 {
-    "project_name": "MyProject",
+    "project_name": "My Project",
+    "pkg_name": "{{ cookiecutter.project_name|lower|replace(' ', '_') }}",
     "project_slug": "{{ cookiecutter.project_name|lower|replace(' ', '-') }}",
     "project_description": "My awesome app.",
     "author": "Foo Bar",
@@ -7,6 +8,7 @@
     "version": "0.1.0",
     "authentication_random": "{{cookiecutter.authentication_random}}",
     "authomatic_random": "{{cookiecutter.authomatic_random}}",
-    "session_random": "{{cookiecutter.session_random}}"
-
+    "session_random": "{{cookiecutter.session_random}}",
+    "db_name": "myproject",
+    "db_user": "db_user"
 }

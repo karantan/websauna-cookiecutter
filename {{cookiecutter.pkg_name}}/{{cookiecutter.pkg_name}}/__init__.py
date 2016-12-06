@@ -4,7 +4,7 @@ import websauna.system
 
 
 class Initializer(websauna.system.Initializer):
-    """An initialization configuration used for starting {{cookiecutter.project_name}}.
+    """An initialization configuration used for starting {{cookiecutter.pkg_name}}.
 
     Override parent class methods to customize application behavior.
     """
@@ -13,22 +13,40 @@ class Initializer(websauna.system.Initializer):
         """Configure static asset serving and cache busting."""
         super(Initializer, self).configure_static()
 
-        self.config.registry.static_asset_policy.add_static_view('{{cookiecutter.project_slug}}-static', '{{cookiecutter.project_name}}:static')
+        self.config.registry.static_asset_policy.add_static_view(
+            '{{cookiecutter.project_slug}}-static',
+            '{{cookiecutter.pkg_name}}:static',
+        )
 
     def configure_templates(self):
         """Include our package templates folder in Jinja 2 configuration."""
         super(Initializer, self).configure_templates()
 
-        self.config.add_jinja2_search_path('{{cookiecutter.project_name}}:templates', name='.html', prepend=True)  # HTML templates for pages
-        self.config.add_jinja2_search_path('{{cookiecutter.project_name}}:templates', name='.txt', prepend=True)  # Plain text email templates (if any)
-        self.config.add_jinja2_search_path('{{cookiecutter.project_name}}:templates', name='.xml', prepend=True)  # Sitemap and misc XML files (if any)
+        self.config.add_jinja2_search_path(
+            '{{cookiecutter.pkg_name}}:templates',
+            name='.html',
+            prepend=True,
+        )  # HTML templates for pages
+        self.config.add_jinja2_search_path(
+            '{{cookiecutter.pkg_name}}:templates',
+            name='.txt',
+            prepend=True,
+        )  # Plain text email templates (if any)
+        self.config.add_jinja2_search_path(
+            '{{cookiecutter.pkg_name}}:templates',
+            name='.xml',
+            prepend=True,
+        )  # Sitemap and misc XML files (if any)
 
     def configure_views(self):
         """Configure views for your application.
 
-        Let the config scanner to pick ``@simple_route`` definitions from scanned modules. Alternative you can call ``config.add_route()`` and ``config.add_view()`` here.
+        Let the config scanner to pick ``@simple_route`` definitions from
+        scanned modules. Alternative you can call ``config.add_route()`` and
+        ``config.add_view()`` here.
         """
-        # We override this method, so that we route home to our home screen, not Websauna default one
+        # We override this method, so that we route home to our home screen,
+        # not Websauna default one
         from . import views
         self.config.scan(views)
 

@@ -35,7 +35,7 @@ setup(name='{{cookiecutter.project_name}}',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      test_suite='{{cookiecutter.project_name}}',
+      test_suite='{{cookiecutter.pkg_name}}',
       install_requires=['websauna'],
       extras_require={
         # Dependencies for running test suite
@@ -58,6 +58,6 @@ setup(name='{{cookiecutter.project_name}}',
       # Define where this application starts as referred by WSGI web servers
       entry_points="""\
       [paste.app_factory]
-      main = {{cookiecutter.project_name}}:main
+      main = {{cookiecutter.pkg_name}}:main
       """,
       )

@@ -8,7 +8,6 @@ Requirements
 ------------
 
 * See websauna `requirements <https://websauna.org/docs/tutorials/gettingstarted/tutorial_02.html#external-dependencies>`_
-* `cookiecutter <https://cookiecutter.readthedocs.io/en/latest/installation.html>`_
 
 Usage
 -----
@@ -17,7 +16,7 @@ Usage
 
 .. code-block:: bash
 
-    $ cookiecutter https://github.com/karantan/websauna-cookiecutter
+    $ ws-create
 
 2. Finish configuring the project by creating a virtual environment and
    installing your new project.

@@ -1,0 +1,6 @@
+__pycache__
+*.py[cod]
+/.tox
+/env*/
+.cache/
+venv/

@@ -21,8 +21,11 @@ def test_it(cookies, capfd):
     assert root_files == [
         '.gitignore',
         'CHANGES.rst',
+        'LICENSE.md',
+        'Makefile',
         'MANIFEST.in',
         'README.rst',
+        'requirements.txt',
         'setup.cfg',
         'setup.py',
     ]
@@ -77,7 +80,7 @@ def test_it(cookies, capfd):
         f.basename for f in project_dir.join('tests').listdir()
         if f.isfile() and f.basename != '.DS_Store'
     ]
-    assert tests_files == ['__init__.py', 'test_login.py']
+    assert tests_files == ['__init__.py', 'test_login.py', 'test_views.py']
 
 
 def test_it_invalid_module_name(cookies, capfd):

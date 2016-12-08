@@ -1,5 +1,6 @@
 """An example login test case."""
 
+import pytest
 import transaction
 
 from sqlalchemy.orm.session import Session
@@ -11,6 +12,7 @@ from websauna.tests.utils import PASSWORD
 from websauna.system import Initializer
 
 
+@pytest.mark.skip(reason="Skip when developing scaffold.")
 def test_login(web_server:str, browser:DriverAPI, dbsession:Session, init:Initializer):
     """Login as a user to the site.
 

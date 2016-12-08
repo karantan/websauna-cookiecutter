@@ -1,0 +1,2 @@
+git+https://github.com/karantan/websauna.git@add/cookiecutter-29#egg=websauna[celery,utils,notebook]
+isort

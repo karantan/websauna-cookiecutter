@@ -9,6 +9,5 @@
     "authentication_random": "{{cookiecutter.authentication_random}}",
     "authomatic_random": "{{cookiecutter.authomatic_random}}",
     "session_random": "{{cookiecutter.session_random}}",
-    "db_name": "myproject",
-    "db_user": "db_user"
+    "db_name": "myproject"
 }

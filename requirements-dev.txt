@@ -1,4 +1,13 @@
-cookiecutter
+git+https://github.com/karantan/websauna.git@add/cookiecutter-29#egg=websauna[celery,utils,notebook]
 pytest
 pytest-cookies
 pytest-venv
+flaky
+pytest-runner
+pytest-splinter
+webtest
+coverage
+pytest-timeout
+pytest-cov
+codecov
+selenium==2.53.6
